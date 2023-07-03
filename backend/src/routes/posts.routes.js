@@ -1,17 +1,29 @@
 import { Router } from "express";
+import multer from "multer";
 import {
+  getAllPosts,
   getPost,
-  createPost,
   editPost,
-  deletePost
+  deletePost,
+  createPost
 } from "../controllers/posts.controller.js";
 
 const router = Router();
 
-router.get("/home", getAllPosts);
-router.get("/post/id", getPost);
-router.patch("/post/id", editPost);
-router.delete("/post/id", deletePost);
-router.post("/new", createPost);
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "../frontend/public");
+  },
+  filename: function (req, file, cb) {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+const upload = multer({ storage: storage });
+
+router.get("/posts", getAllPosts);
+router.get("/posts/:id", getPost);
+router.patch("/posts/:id", upload.single("file"), editPost);
+router.delete("/posts/:id", deletePost);
+router.post("/new", upload.single("file"), createPost);
 
 export default router;

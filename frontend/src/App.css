@@ -1,1 +1,29 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+.backgroundHeader {
+  background-color: lightgreen;
+  font-family: "Poppins", sans-serif;
+  border-radius: 5px;
+  box-shadow: inset 0px 6px 20px rgba(60, 60, 60, 0.2);
+}
+
+.backgroundNavButton {
+  background-color: coral;
+}
+
+.backgroundFooter {
+  background-color: lightgrey;
+  border-radius: 5px;
+}
+
+.backgroundShowMoreButton {
+  background-color: lightgreen;
+}
+
+.h2-card-title {
+  transition: transform 0.2s;
+}
+
+.h2-card-title:hover {
+  transform: scale(1.1);
+}

@@ -1,15 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Posts from "./pages/Posts";
+import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import CompletePost from "./pages/CompletePost";
+import New from "./pages/New";
+import "./App.css";
 
 function App() {
   return (
     <Router>
       <Routes>
-        {/* <Route path="/" element={<Login />} /> */}
-        <Route path="/posts" element={<Posts />} />
+        <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="/post/:id" element={<CompletePost />} />
+        <Route path="/new" element={<New />} />
       </Routes>
     </Router>
   );

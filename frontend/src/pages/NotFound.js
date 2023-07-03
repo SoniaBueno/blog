@@ -4,7 +4,7 @@ export default function NotFound() {
   const navigate = useNavigate();
 
   const handleButton = () => {
-    navigate("/posts");
+    navigate("/");
   };
 
   return (
@@ -16,10 +16,10 @@ export default function NotFound() {
         <h1>Mejor vuelve, no estás en el sitio correcto :D</h1>
         <button
           onClick={handleButton}
-          className="btn rounded-5 btn-general m-4"
+          className="btn rounded-2 btn-general m-4"
           type="button"
           style={{
-            backgroundColor: "palevioletred",
+            backgroundColor: "coral"
           }}
         >
           Volver
