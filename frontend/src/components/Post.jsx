@@ -145,16 +145,15 @@ export default function Post() {
             </div>
             <div>
               {isEditable ? (
-                                <div className="p-2">
-                                <button
-                                  type="button"
-                                  className="btn btn-outline-third btn-floating"
-                                  onClick={saveButton}
-                                >
-                                  <FaSave />
-                                </button>
-                              </div>
-             
+                <div className="p-2">
+                  <button
+                    type="button"
+                    className="btn btn-outline-third btn-floating"
+                    onClick={saveButton}
+                  >
+                    <FaSave />
+                  </button>
+                </div>
               ) : (
                 <div className="p-2">
                   <button
