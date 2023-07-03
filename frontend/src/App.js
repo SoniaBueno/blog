@@ -5,6 +5,7 @@ import NotFound from "./pages/NotFound";
 import CompletePost from "./pages/CompletePost";
 import New from "./pages/New";
 import "./App.css";
+import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {
   return (

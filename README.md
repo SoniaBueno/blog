@@ -33,11 +33,11 @@ Instalación de Node.JS, React y librerías, siendo consciente de que instalaré
 - Backend: ``npm init -y``, ``npm i express dotenv date-fns esm mysql2``(express, variables de entorno, librería específica para fechas de los posts y controlador de Node.js para interactuar con bases de datos MySQL), ``npm install -g nodemon``, ``npm i nodemon`` (para actualización automática cuando haya modificaciones en rutas y controladores del backend).
 - Frontend: blog desarrollado con React. ``npx create-react-app .``, ``npm install react-bootstrap@next bootstrap@5.3.0``(react-bootstrap y bootstrap 5), ``npm i react-router-dom``
 
-## EN BACKEND: carpetas:
+## EN BACKEND. Carpetas:
 1. Carpeta database.
 2. Carpeta src con tres carpetas y dos archivos:
-  - controllers: para mí, el archivo más complejo de todos.
-  - routes: esbozo los endpoints que voy a necesitar, aunque los dejo comentados y los voy descomentando según los vaya usando.
+  - **controllers**: para mí, el archivo más complejo de todos.
+  - **routes**: esbozo los endpoints que voy a necesitar, aunque los dejo comentados y los voy descomentando según los vaya usando.
   - env con el archivo con las variables de entorno necesarias.
   - app.js, donde irán enrutados los futuros endpoints.
   - db.js, para conectar con la base de datos.
@@ -49,23 +49,23 @@ Instalación de Node.JS, React y librerías, siendo consciente de que instalaré
   },
 ```
 
-## EN FRONTEND: carpetas:
+## EN FRONTEND. Carpetas:
 1. Proyecto de React viene con carpeta public, que es donde guardo las imágenes de las entradas.
 2. En src creo dos carpetas:
-  - components: aquí están el header y el footer que aparecen en todas las vistas (salvo en notfound) y tres tarjetas:
-    -- NewPost, que es una tarjeta con inputs para los campos de una entrada nueva.
-    -- Post, que es la entrada con el texto completo.
-    -- Postcard, que es una versión reducida de una entrada.
-  - pages: aquí importo los componentes de la carpeta components que necesite y estructuro todo para que sea responsivo.
+  - **components**: aquí están el header y el footer que aparecen en todas las vistas (salvo en notfound) y tres tarjetas:
+    ***NewPost***, que es una tarjeta con inputs para los campos de una entrada nueva; 
+    ***Post***, que es la entrada con el texto completo;
+    ***Postcard***, que es una versión reducida de una entrada.
+  - **pages**: aquí importo los componentes de la carpeta components que necesite y estructuro todo para que sea responsivo.
 3. App.css
-4. App.js: rutas /, /new, /post/:id, * (notfound).
+4. App.js: App.css y bootstrap se importan aquí. En este archivo están las rutas del blog como son /, /new, /post/:id,¡ y * (notfound).
 5. index.js: renderiza App.js
 
 ## Cómo he trabajado y dificultades que he encontrado
 
 Como he comentado ya, empecé con los componentes más sencillos, los que no tenían solicitudes HTTP, para seguir con los que sí. Siempre hay iteraciones y he vuelto sobre todos los componentes y páginas/vistas para ir añadiendo funcionalidades y cambiando detalles para ajustarme a las instrucciones. Por ejemplo, inicialmente había puesto un botón para ver una entrada completa en vez de hacer la navegación desde la imagen y el título, como se pedía.
 
-También quiero comentar que a veces la idea inicial deja de estar clara según se avanza. Cuando empecé a crear los componentes decidí hablar con una compañera sobre las carpetas components y pages porque empecé a dudar sobre la división que había hecho. Esta conversación me ayudó a establecer la estructura definitiva y no gastar tiempo con dudas.
+También quiero comentar que a veces la idea inicial deja de estar clara según se avanza. Cuando empecé a crear los componentes decidí hablar con una compañera sobre las carpetas components y pages porque estaba dudando sobre la división que había hecho. Esta conversación me ayudó a establecer la estructura definitiva y a tomar una decisión mucho más rápida que si empezaba a dudar y no le exponía mi idea a nadie.
 
 Por otro lado quiero comentar que la mayor dificultad la encontré con las imágenes. Leí documentación sobre la carpeta public, busqué tutoriales, consulté código en Stack Overflow, hablé mucho con chatGPT. También busqué ayuda fuera de Internet cuando conseguí que las rutas de las imágenes se almacenaran en base de datos pero no era capaz de mostrarlas en el blog. Borrar las imágenes de la carpeta public también fue un desafío, por eso quiero poner aquí el controller que borra la entrada:
 
