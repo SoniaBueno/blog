@@ -19,8 +19,13 @@ export const getPost = async (req, res) => {
 
 export const editPost = async (req, res) => {
   try {
-    const filePath = "/"+ req.file.filename;
     const postData = req.body;
+    let filePath;
+    if (req.file != undefined) {
+      filePath = "/" + req.file.filename;
+    } else {
+      filePath = postData.picture;
+    }
     console.log(postData);
     const id = req.params.id;
     const query =

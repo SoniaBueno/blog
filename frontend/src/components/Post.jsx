@@ -48,7 +48,7 @@ export default function Post() {
         formData.append("file", file);
         formData.append("title", document.getElementById("titlePost").value);
         formData.append("text", document.getElementById("textareaPost").value);
-
+        formData.append("picture", postObject.picture);
         const response = await fetch(`http://localhost:3001/posts/${id}`, {
           method: "PATCH",
           body: formData,
@@ -103,16 +103,16 @@ export default function Post() {
               className="card-img-top mb-2"
               alt="..."
             />{" "}
+            {isEditable && (
+              <input
+                type="file"
+                onChange={(e) => {
+                  setFile(e.target.files[0]);
+                }}
+                id="editable-image"
+              />
+            )}
           </form>
-          {isEditable && (
-            <input
-              type="file"
-              onChange={(e) => {
-                setFile(e.target.files[0]);
-              }}
-              id="editable-image"
-            />
-          )}
         </div>
         <div className="card-body">
           {isEditable ? (
