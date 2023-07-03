@@ -60,8 +60,8 @@ export default function NewPost() {
         <textarea
           name="textareaPost"
           id="textareaPost"
-          cols="60"
-          rows="15"
+          cols="50"
+          rows="10"
           placeholder="Escribe aquí el contenido de tu entrada"
         ></textarea>
 
