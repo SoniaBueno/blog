@@ -7,17 +7,62 @@
   box-shadow: inset 0px 6px 20px rgba(60, 60, 60, 0.2);
 }
 
-.backgroundNavButton {
+.btn-coral {
   background-color: coral;
+  color: white;
 }
+
+.saveButton {
+  background-color: coral;
+  border-color: coral;
+}
+
+.saveButtonWithoutIcon {
+  background-color: lightgreen;
+  border-color: lightgreen;
+}
+
+.btn-outline-third.btn-floating {
+  color: black;
+  background-color: white;
+  border-color: black;
+}
+
+.btn-outline-third.btn-floating:hover {
+  background-color: lightgreen;
+  color: black;
+  border-color: lightgreen;
+}
+
+
+.btn-outline-second.btn-floating {
+  color: black;
+  background-color: white;
+  border-color: black;
+}
+
+.btn-outline-second.btn-floating:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.btn-outline-success.btn-floating {
+  color: coral;
+  background-color: white;
+  border-color: coral;
+}
+
+.btn-outline-success.btn-floating:hover {
+  background-color: coral;
+  color: white;
+  border-color: coral;
+}
+
 
 .backgroundFooter {
   background-color: lightgrey;
   border-radius: 5px;
-}
-
-.backgroundShowMoreButton {
-  background-color: lightgreen;
 }
 
 .h2-card-title {
@@ -26,4 +71,8 @@
 
 .h2-card-title:hover {
   transform: scale(1.1);
+}
+
+.pointer-cursor {
+  cursor: pointer;
 }

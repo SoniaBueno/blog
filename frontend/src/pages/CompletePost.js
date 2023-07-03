@@ -9,7 +9,7 @@ export default function CompletePost() {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Entrada completa</title>
       <Header />
-      <main className="container">
+      <main className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-lg-6 col-md-10 col-sm-10 d-flex justify-content-center align-items-center">
             <div className="p-4" style={{ maxWidth: "100%" }}>
@@ -17,7 +17,6 @@ export default function CompletePost() {
             </div>
           </div>
         </div>
-        
       </main>
       <Footer />
     </div>

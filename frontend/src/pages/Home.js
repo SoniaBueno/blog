@@ -27,13 +27,10 @@ export default function Home() {
     fetchPostObject();
   }, []);
 
-
-
   function addPost() {
-    
     navigate("/new");
-  };
-  
+  }
+
   return (
     <div className="d-flex justify-content-center align-items-center flex-column">
       <meta charSet="UTF-8" />
@@ -41,29 +38,30 @@ export default function Home() {
       <Helmet>
         <title>Muevete</title>
       </Helmet>
-      <Header/>
-      <nav className="text-center">
-        <button className="btn btn-lg mt-3 backgroundNavButton"
-        onClick={addPost}>
-          Añadir entrada nueva 
+      <Header />
+      <nav className="justify-content-center mt-4">
+        <button className="rounded saveButton p-2 " onClick={addPost}>
+          <h5 className="mb-0">Añadir entrada nueva</h5>
         </button>
       </nav>
-      <main className="container">
-        <div className="row justify-content-center">
-          <section className="col-lg-6 col-md-10 col-sm-10 d-flex justify-content-center align-items-center">
-            <article className="p-4" style={{ maxWidth: "100%" }}>
-              {Array.isArray(postObject) && postObject.length > 0 && (
-                <ul className="list-group">
-                  {postObject.map((post) => (
-                    <Postcard post={post} key={post.id} />
-                  ))}
-                </ul>
-              )}
-            </article>
-          </section>
+      <main className="container-fluid">
+        <div className="d-flex-column min-vh-100">
+          <div className="row justify-content-center">
+            <section className="col-lg-6 col-md-8 col-sm-10 d-flex justify-content-center align-items-center">
+              <article className="p-4" style={{ maxWidth: "100%" }}>
+                {Array.isArray(postObject) && postObject.length > 0 && (
+                  <ul className="list-group">
+                    {postObject.map((post) => (
+                      <Postcard post={post} key={post.id} />
+                    ))}
+                  </ul>
+                )}
+              </article>
+            </section>
+          </div>
         </div>
       </main>
-      <Footer/>
+      <Footer />
     </div>
   );
 }

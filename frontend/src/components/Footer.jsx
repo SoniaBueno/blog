@@ -4,6 +4,6 @@ function Footer() {
       <h4 className="p-2 mt-2">Muévete © 2023</h4>
     </div>
   );
-};
+}
 
 export default Footer;

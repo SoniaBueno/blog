@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-
 export default function NewPost() {
   const [file, setFile] = useState(null);
   const navigate = useNavigate();
@@ -14,8 +13,8 @@ export default function NewPost() {
 
       const response = await fetch("http://localhost:3001/new", {
         method: "POST",
-        body: formData
-      })
+        body: formData,
+      });
 
       if (response.ok) {
         navigate("/");
@@ -27,19 +26,18 @@ export default function NewPost() {
     }
   }
 
-
   return (
-    <div className="card text-center shadow">
-      <div className="container p-4">
-        <div className="container">
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
+    <div className="card text-center shadow col-lg-10 col-md-10 col-sm-10 d-flex align-items-center">
+      <div className="container-fluid p-4">
+        <form
+          onSubmit={(e) => {
+            e.preventDefault();
 
-              if (!file) return;
-            }}
-          >
-            <label>Subir imagen:</label>
+            if (!file) return;
+          }}
+        >
+          <label>Subir imagen:</label>
+          <div>
             <input
               type="file"
               onChange={(e) => {
@@ -47,11 +45,17 @@ export default function NewPost() {
               }}
               id="upload-image"
             />
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
+
       <div className="card-body">
-        <input type="text" id="titlePost" placeholder="Título de la entrada" />
+        <input
+          type="text"
+          id="titlePost"
+          placeholder="Título de la entrada"
+          className="mb-2"
+        />
 
         <textarea
           name="textareaPost"
@@ -62,10 +66,7 @@ export default function NewPost() {
         ></textarea>
 
         <div>
-          <button
-            className="col-3 rounded backgroundNavButton"
-            onClick={saveButton}
-          >
+          <button className="col-3 rounded saveButton" onClick={saveButton}>
             Guardar
           </button>
         </div>

@@ -19,7 +19,7 @@ export default function NotFound() {
           className="btn rounded-2 btn-general m-4"
           type="button"
           style={{
-            backgroundColor: "coral"
+            backgroundColor: "coral",
           }}
         >
           Volver
